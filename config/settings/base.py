@@ -338,3 +338,5 @@ SPECTACULAR_SETTINGS = {
 }
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+MODEL_STRUCTURE_FILE = env.str("MODEL_STRUCTURE_FILE", "SEDOS_Modellstruktur.xlsx")

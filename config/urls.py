@@ -6,6 +6,7 @@ from django.views import defaults as default_views
 
 urlpatterns = [
     path("", include("django_comparison_dashboard.urls")),
+    path("", include("django_energysystem_viewer.urls")),
     path(settings.ADMIN_URL, admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
