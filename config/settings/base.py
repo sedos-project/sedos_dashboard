@@ -85,6 +85,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "sedos_dashboard.users",
     "django_comparison_dashboard",
+    "django_energysystem_viewer",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
