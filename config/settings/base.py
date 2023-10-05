@@ -80,6 +80,7 @@ THIRD_PARTY_APPS = [
     "rest_framework.authtoken",
     "corsheaders",
     "drf_spectacular",
+    "template_partials",
 ]
 
 LOCAL_APPS = [
@@ -166,6 +167,14 @@ MEDIA_URL = "/media/"
 
 # TEMPLATES
 # ------------------------------------------------------------------------------
+# https://github.com/carltongibson/django-template-partials#installation
+default_loaders = [
+    "django.template.loaders.filesystem.Loader",
+    "django.template.loaders.app_directories.Loader",
+]
+cached_loaders = [("django.template.loaders.cached.Loader", default_loaders)]
+partial_loaders = [("template_partials.loader.Loader", cached_loaders)]
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#templates
 TEMPLATES = [
     {
@@ -174,7 +183,6 @@ TEMPLATES = [
         # https://docs.djangoproject.com/en/dev/ref/settings/#dirs
         "DIRS": [str(APPS_DIR / "templates")],
         # https://docs.djangoproject.com/en/dev/ref/settings/#app-dirs
-        "APP_DIRS": True,
         "OPTIONS": {
             # https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
             "context_processors": [
@@ -188,6 +196,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "sedos_dashboard.users.context_processors.allauth_settings",
             ],
+            "loaders": partial_loaders,
         },
     }
 ]
