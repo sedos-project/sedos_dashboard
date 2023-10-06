@@ -107,7 +107,7 @@ indent_size = 2
 
 # ==== ruff ====
 [tool.ruff]
-line-length = 120
+line-length = 119
 select = ["ALL"]
 exclude = [
   "manage.py",
