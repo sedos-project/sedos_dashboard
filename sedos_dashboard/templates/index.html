@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Contents</h1>
+  <h2>Comparison Dashboard</h2>
+  <ul>
+    <li>
+      <a href="{% url 'django_comparison_dashboard:scenarios' %}">Scenario Selection</a>
+    </li>
+    <li>
+      <a href="{% url 'django_comparison_dashboard:upload' %}">Scenario Upload</a>
+    </li>
+  </ul>
+  <h2>Energysystem Viewer</h2>
+  <ul>
+    <li>
+      <a href="{% url 'django_energysystem_viewer:collections' %}">Collections</a>
+    </li>
+  </ul>
+{% endblock content %}
