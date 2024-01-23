@@ -14,13 +14,13 @@ update_vendor_assets:
 	cp node_modules/bootstrap/dist/js/bootstrap.min.js* sedos_dashboard/static/vendors/bootstrap/js/
 
 	# Bootstrap-Select https://github.com/snapappointments/bootstrap-select
-	rm -r sedos_dashboard/static/vendors/bootstrap-select/css/*
-	cp -r node_modules/bootstrap-select/dist/css/* sedos_dashboard/static/vendors/bootstrap-select/css/
-	rm -r sedos_dashboard/static/vendors/bootstrap-select/js/*
-	cp node_modules/bootstrap-select/dist/js/bootstrap-select.js sedos_dashboard/static/vendors/bootstrap-select/js/
+#	rm -r sedos_dashboard/static/vendors/bootstrap-select/css/*
+#	cp -r node_modules/bootstrap-select/dist/css/* sedos_dashboard/static/vendors/bootstrap-select/css/
+#	rm -r sedos_dashboard/static/vendors/bootstrap-select/js/*
+#	cp node_modules/bootstrap-select/dist/js/bootstrap-select.js sedos_dashboard/static/vendors/bootstrap-select/js/
 
 	# jQuery https://github.com/jquery/jquery
-	rm -r sedos_dashboard/static/vendors/jquery/js/*
-	cp node_modules/jquery/dist/jquery.min.* sedos_dashboard/static/vendors/jquery/js/
+#	rm -r sedos_dashboard/static/vendors/jquery/js/*
+#	cp node_modules/jquery/dist/jquery.min.* sedos_dashboard/static/vendors/jquery/js/
 
 	# Done
