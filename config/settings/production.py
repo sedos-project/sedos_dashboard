@@ -116,7 +116,7 @@ COMPRESS_FILTERS = {
 
 LOGGING = {
     "version": 1,
-    "disable_existing_loggers": True,
+    "disable_existing_loggers": False,
     "formatters": {
         "verbose": {
             "format": "%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s",
@@ -129,7 +129,7 @@ LOGGING = {
             "formatter": "verbose",
         }
     },
-    "root": {"level": "DEBUG", "handlers": ["console"]},
+    "root": {"level": "INFO", "handlers": ["console"]},
     "loggers": {
         "django.db.backends": {
             "level": "ERROR",
