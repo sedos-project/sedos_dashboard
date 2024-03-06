@@ -12,11 +12,7 @@ from django.utils.translation import gettext_lazy as _
 from sedos_dashboard.users.forms import UserAdminChangeForm
 from sedos_dashboard.users.models import User
 from sedos_dashboard.users.tests.factories import UserFactory
-from sedos_dashboard.users.views import (
-    UserRedirectView,
-    UserUpdateView,
-    user_detail_view,
-)
+from sedos_dashboard.users.views import UserRedirectView, UserUpdateView, user_detail_view
 
 pytestmark = pytest.mark.django_db
 
