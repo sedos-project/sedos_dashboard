@@ -327,7 +327,7 @@ tags
 dump.rdb
 
 ### Project template
-sedos_dashboard/media/
+sedos_dashboard/media/collections
 
 .pytest_cache/
 .ipython/
