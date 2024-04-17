@@ -7,6 +7,7 @@ and this project tries to adhere to [Semantic Versioning](https://semver.org/spe
 ## [Unreleased]
 ### Added
 - [datatables](https://datatables.net/)
+- update django_energysystem_viewer to v0.7.0
 
 ## [0.6.0] - 2024-04-10
 ### Changed
