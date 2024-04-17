@@ -334,3 +334,4 @@ sedos_dashboard/media/collections
 .env
 .envs/*
 !.envs/.local/
+/scripts/

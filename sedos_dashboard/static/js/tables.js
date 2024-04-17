@@ -38,7 +38,7 @@ function prepareJson(data, type, row, meta) {
 
 function renderJson(td, data, row) {
     if (data.startsWith("{")) {
-        const json_data = JSON.parse(row[20].replaceAll("'", '"'));
+        const json_data = JSON.parse(data.replaceAll("'", '"'));
         $(td).find('pre').jsonViewer(json_data, {collapsed: true});
     }
 }
