@@ -4,17 +4,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project tries to adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+### Changed
+- dashboard to v2.1.1  to fix numpy error
+
 ## [0.11.0] - 2024-06-28
 ### Changed
-- django-comparison-dashboard to v2.1.o to support display options
+- dashboard to v2.1.0 to support display options
 
 ## [0.10.0] - 2024-06-28
 ### Changed
-- django-comparison-dashboard to v2.0.1 to add input and output groups
+- dashboard to v2.0.1 to add input and output groups
 
 ## [0.9.0] - 2024-06-06
 ### Changed
-- django-comparison-dashboard to v1.1.0 to support fomantic-ui
+- dashboard to v1.1.0 to support fomantic UI
 
 ## [0.8.0] - 2024-05-16
 ### Changed
