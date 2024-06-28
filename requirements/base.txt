@@ -24,5 +24,5 @@ django-cors-headers==4.2.0  # https://github.com/adamchainz/django-cors-headers
 # DRF-spectacular for api documentation
 drf-spectacular==0.26.4  # https://github.com/tfranzel/drf-spectacular
 
-git+https://github.com/OpenEnergyPlatform/django-comparison-dashboard.git@v2.0.0
+git+https://github.com/OpenEnergyPlatform/django-comparison-dashboard.git@v2.0.1
 git+https://github.com/sedos-project/django_energysystem_viewer.git@v0.7.0
