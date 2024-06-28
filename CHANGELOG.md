@@ -6,7 +6,7 @@ and this project tries to adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [0.11.0] - 2024-06-28
 ### Changed
-- django-comparison-dashboard to v2.0.1 to add input and output groups
+- django-comparison-dashboard to v2.1.o to support display options
 
 ## [0.10.0] - 2024-06-28
 ### Changed
