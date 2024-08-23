@@ -1,20 +1,81 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Contents</h1>
-  <h2>Comparison Dashboard</h2>
-  <ul>
-    <li>
-      <a href="{% url 'django_comparison_dashboard:scenarios' %}">Scenario Selection</a>
-    </li>
-    <li>
-      <a href="{% url 'django_comparison_dashboard:upload' %}">Scenario Upload</a>
-    </li>
-  </ul>
-  <h2>Energysystem Viewer</h2>
-  <ul>
-    <li>
-      <a href="{% url 'django_energysystem_viewer:selection' %}">Explore Energysystem</a>
-    </li>
-  </ul>
+  <h1>Welcome to the SEDOS GUI</h1>
+  <div class="mt-3">
+    <label for="customTextBox">
+      Why SEDOS:
+      In the SEDOS project we developed an open-source model structure taking into account the relevant future
+      technologies for electricity, heat, X2X, transport and industry in a sector-coupled energy system in Germany.
+      Why this GUI:
+      To improve the transparency and reproducibility of the open source structure this GUI provides.
+      a few basic functionalities to explore the derived modeling base:
+      1. Looking into the input data and the underlying model structure of our reference energy system.
+      2. Looking into possible model results when applying the model data with different scenarios.
+    </label>
+  </div>
+  <div class="mt-3"></div>
+  <a href="https://sedos-project.github.io/.github/"
+     class="btn btn-secondary"
+     target="_blank">Info: See more details on
+  SEDOS in the docs</a>
+  <h2>Explore the Model Structure</h2>
+  <div>
+    <label for="structures">Select Model Structure</label>
+    <select class="form-select" id="structure" name="structure">
+      {% for structure in structure_list %}<option label="{{ structure }}">{{ structure }}</option>{% endfor %}
+    </select>
+  </div>
+  <form method="get">
+    {% csrf_token %}
+    <div>
+      <button class="btn btn-primary"
+              type="submit"
+              formaction="{% url 'django_energysystem_viewer:networks' %}">Generate Networks</button>
+      <button class="btn btn-primary"
+              type="submit"
+              formaction="{% url 'django_energysystem_viewer:processes' %}">Look at Processes</button>
+      <button class="btn btn-primary"
+              type="submit"
+              formaction="{% url 'django_energysystem_viewer:artifacts' %}">Look at Artifacts</button>
+      <button class="btn btn-primary"
+              type="submit"
+              formaction="{% url 'django_energysystem_viewer:aggregations' %}">Aggregation Graph</button>
+    </div>
+  </form>
+  <div class="mt-3"></div>
+  <a href="https://sedos-project.github.io/.github/results/"
+     class="btn btn-secondary"
+     target="_blank">Exemplary Graphs</a>
+  <h2>Explore the Model Results</h2>
+  <div>
+    <label for="scenarios">Select Scenario</label>
+    <select class="form-select" id="scenario" name="scenario">
+      {% for scenario in scenario_list %}<option label="{{ scenario }}">{{ scenario }}</option>{% endfor %}
+    </select>
+  </div>
+  <div class="mt-3"></div>
+  <form method="get">
+    {% csrf_token %}
+    <div>
+      <button class="btn btn-primary"
+              type="submit"
+              formaction="{% url 'django_comparison_dashboard:dashboard' %}">Explore Diagrams</button>
+    </div>
+  </form>
+  <div class="mt-3"></div>
+  <a href="https://sedos-project.github.io/.github/results/"
+     class="btn btn-secondary"
+     target="_blank">Exemplary Result Diagrams</a>
+  <div class="mt-3">
+    <label for="customTextBox">
+      Scenario description:
+      1. Base scenario ToKo - technology-open & cost-optimal
+      2. Scenario variation RIGa: Reduced import dependency for fossil gas
+      3. Scenario variation SienA/B: sector integration
+    </label>
+  </div>
+  <a href="https://sedos-project.github.io/.github/scenarios/"
+     class="btn btn-secondary"
+     target="_blank">See more details on the scenarios</a>
 {% endblock content %}
