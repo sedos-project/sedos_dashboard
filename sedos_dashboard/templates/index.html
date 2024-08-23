@@ -48,20 +48,14 @@
      class="btn btn-secondary"
      target="_blank">Exemplary Graphs</a>
   <h2>Explore the Model Results</h2>
-  <div>
+  <form>
     <label for="scenarios">Select Scenario</label>
-    <select class="form-select" id="scenario" name="scenario">
-      {% for scenario in scenario_list %}<option label="{{ scenario }}">{{ scenario }}</option>{% endfor %}
+    <select class="form-select" id="scenario" name="scenario_id">
+      {% for scenario in scenarios %}
+        <option value="{{ scenario.id }}" label="{{ scenario.name }}">{{ scenario }}</option>
+      {% endfor %}
     </select>
-  </div>
-  <div class="mt-3"></div>
-  <form method="get">
-    {% csrf_token %}
-    <div>
-      <button class="btn btn-primary"
-              type="submit"
-              formaction="{% url 'django_comparison_dashboard:dashboard' %}">Explore Diagrams</button>
-    </div>
+    <button class="btn btn-primary" type="submit" name="diagrams">Explore Diagrams</button>
   </form>
   <div class="mt-3"></div>
   <a href="https://sedos-project.github.io/.github/results/"
@@ -79,3 +73,7 @@
      class="btn btn-secondary"
      target="_blank">See more details on the scenarios</a>
 {% endblock content %}
+{% block javascript %}
+  {{ block.super }}
+  <script src="https://unpkg.com/htmx.org@1.6.0"></script>
+{% endblock javascript %}
