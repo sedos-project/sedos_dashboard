@@ -5,8 +5,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project tries to adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- landing page
+- available scenarios to landing page
+- available models to landing page
+
+### Changed
+- combined structure and collection into selectable model
+- move structures to media folder
+
 ### Fixed
 - allow iFrame integration of dashboard
+- datatable reinitialization error
 
 ## [0.11.1] - 2024-06-28
 ### Changed
