@@ -9,7 +9,9 @@ $('document').ready(renderTables);
 function renderTables() {
     tables = document.querySelectorAll("table");
     for (const table of tables) {
-        makeDataTable($(table));
+        if (!table.classList.contains("dataTable")) {
+            makeDataTable($(table));
+        }
     }
 }
 
