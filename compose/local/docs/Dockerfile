@@ -16,14 +16,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/*
 
-# Requirements are installed here to ensure they will be cached.
-COPY ./requirements /requirements
-
-# create python dependency wheels
-RUN pip wheel --no-cache-dir --wheel-dir /usr/src/app/wheels  \
-  -r /requirements/local.txt -r /requirements/production.txt \
-  && rm -rf /requirements
-
 
 # Python 'run' stage
 FROM python as python-run-stage
@@ -39,6 +31,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   libpq-dev \
   # Translations dependencies
   gettext \
+  git \
   # Uncomment below lines to enable Sphinx output to latex and pdf
   # texlive-latex-recommended \
   # texlive-fonts-recommended \
@@ -48,12 +41,11 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/*
 
-# copy python dependency wheels from python-build-stage
-COPY --from=python-build-stage /usr/src/app/wheels /wheels
+# Copy your requirements.txt file to the container
+COPY ./requirements ${APP_HOME}/requirements
 
-# use wheels to install python dependencies
-RUN pip install --no-cache /wheels/* \
-  && rm -rf /wheels
+# Install Python dependencies directly from requirements.txt
+RUN pip install --no-cache-dir -r ${APP_HOME}/requirements/${BUILD_ENVIRONMENT}.txt
 
 COPY ./compose/local/docs/start /start-docs
 RUN sed -i 's/\r$//g' /start-docs
