@@ -35,22 +35,6 @@ services:
     env_file:
       - .envs/.local/.postgres
 
-  docs:
-    image: sedos_dashboard_local_docs
-    container_name: sedos_dashboard_local_docs
-    build:
-      context: .
-      dockerfile: compose/local/docs/Dockerfile
-    env_file:
-      - .envs/.local/.django
-    volumes:
-      - ./docs:/docs:z
-      - ./config:/app/config:z
-      - ./sedos_dashboard:/app/sedos_dashboard:z
-    ports:
-      - '9000:9000'
-    command: /start-docs
-
   redis:
     image: redis:6
     container_name: sedos_dashboard_local_redis
