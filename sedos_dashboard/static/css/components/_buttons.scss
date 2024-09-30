@@ -1,0 +1,15 @@
+.button {
+  width: auto;
+  border-radius: $radius-btn;
+
+  &--secondary {
+    color: $color-text;
+    background-color: transparent;
+    border: 2px solid $color-primary;
+
+    &:hover,
+    &:active {
+      border-color: $color-primary-dark;
+    }
+  }
+}

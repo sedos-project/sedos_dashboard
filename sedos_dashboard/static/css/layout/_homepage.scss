@@ -1,0 +1,32 @@
+.hp {
+  padding: 4rem 0;
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width: $breakpoint-lg) {
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    & > div {
+      border: 1px solid $color-border;
+      border-radius: $radius-lg;
+      flex: 1;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background-color: $color-light;
+    }
+
+    &-title {
+      display: block;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+    }
+
+    &-text {
+      display: block;
+    }
+  }
+}
