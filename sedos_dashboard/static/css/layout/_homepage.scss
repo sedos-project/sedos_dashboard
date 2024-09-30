@@ -41,11 +41,22 @@
   }
 
   &__section {
-    border: 1px solid $color-text;
+    border: 1px solid $color-secondary;
     border-radius: $radius-lg;
     flex: 1;
     padding: 2rem;
     margin-bottom: 1rem;
     background-color: $color-light;
+
+    &-title {
+      color: $color-secondary-dark;
+    }
+
+    &-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 2rem 0;
+    }
   }
 }
