@@ -4,6 +4,7 @@
   &__intro {
     display: flex;
     flex-direction: column;
+    padding-bottom: 2rem;
 
     @media only screen and (min-width: $breakpoint-lg) {
       flex-direction: row;
@@ -16,7 +17,6 @@
       flex: 1;
       padding: 1rem;
       margin-bottom: 1rem;
-      background-color: $color-light;
     }
 
     &-title {
@@ -28,5 +28,24 @@
     &-text {
       display: block;
     }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width: $breakpoint-lg) {
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+
+  &__section {
+    border: 1px solid $color-text;
+    border-radius: $radius-lg;
+    flex: 1;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    background-color: $color-light;
   }
 }

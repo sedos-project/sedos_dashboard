@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="hp">
+  <main class="hp">
     <h1>Welcome to the SEDOS GUI</h1>
     <div class="hp__intro">
       <div>
@@ -42,50 +42,70 @@
         </a>
       </div>
     </div>
-    <h2>Explore the Model Structure</h2>
-    <form>
-      {% csrf_token %}
-      <label for="models">Select Model Structure</label>
-      <select class="form-select" id="models" name="model">
-        {% for model in models %}<option label="{{ model }}">{{ model }}</option>{% endfor %}
-      </select>
-      <div>
-        <button class="btn btn-primary" type="submit" name="network">Generate Networks</button>
-        <button class="btn btn-primary" type="submit" name="processes">Look at Processes</button>
-        <button class="btn btn-primary" type="submit" name="artifacts">Look at Artifacts</button>
-        <button class="btn btn-primary" type="submit" name="aggregations">Aggregation Graph</button>
+    <div class="hp__content">
+      <div class="hp__section">
+        <h2>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="6" cy="6" rx="6" ry="6" transform="rotate(-180 6 6)" fill="black" fill-opacity="0.8"/>
+            <ellipse cx="12" cy="12" rx="6" ry="6" transform="rotate(-180 12 12)" fill="#D9D9D9" fill-opacity="0.8"/>
+            <ellipse cx="18" cy="18" rx="6" ry="6" transform="rotate(-180 18 18)" fill="#8E8E8E" fill-opacity="0.8"/>
+          </svg>
+          <span>Explore the Model Structure</span>
+        </h2>
+        <form>
+          {% csrf_token %}
+          <label for="models">Select Model Structure</label>
+          <select class="form-select" id="models" name="model">
+            {% for model in models %}<option label="{{ model }}">{{ model }}</option>{% endfor %}
+          </select>
+          <div>
+            <button class="btn btn-primary" type="submit" name="network">Generate Networks</button>
+            <button class="btn btn-primary" type="submit" name="processes">Look at Processes</button>
+            <button class="btn btn-primary" type="submit" name="artifacts">Look at Artifacts</button>
+            <button class="btn btn-primary" type="submit" name="aggregations">Aggregation Graph</button>
+          </div>
+        </form>
+        <div class="mt-3"></div>
+        <a href="https://sedos-project.github.io/.github/results/"
+          class="btn btn-secondary"
+          target="_blank">Exemplary Graphs</a>
       </div>
-    </form>
-    <div class="mt-3"></div>
-    <a href="https://sedos-project.github.io/.github/results/"
-      class="btn btn-secondary"
-      target="_blank">Exemplary Graphs</a>
-    <h2>Explore the Model Results</h2>
-    <form>
-      <label for="scenarios">Select Scenario</label>
-      <select class="form-select" id="scenario" name="scenario_id">
-        {% for scenario in scenarios %}
-          <option value="{{ scenario.id }}" label="{{ scenario.name }}">{{ scenario }}</option>
-        {% endfor %}
-      </select>
-      <button class="btn btn-primary" type="submit" name="diagrams">Explore Diagrams</button>
-    </form>
-    <div class="mt-3"></div>
-    <a href="https://sedos-project.github.io/.github/results/"
-      class="btn btn-secondary"
-      target="_blank">Exemplary Result Diagrams</a>
-    <div class="mt-3">
-      <label for="customTextBox">
-        Scenario description:
-        1. Base scenario ToKo - technology-open & cost-optimal
-        2. Scenario variation RIGa: Reduced import dependency for fossil gas
-        3. Scenario variation SienA/B: sector integration
-      </label>
+      <div class="hp__section">
+        <h2>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="16" cy="18" rx="6" ry="6" transform="rotate(-180 16 18)" fill="black" fill-opacity="0.8"/>
+            <ellipse cx="16" cy="6" rx="6" ry="6" transform="rotate(-180 16 6)" fill="#D9D9D9" fill-opacity="0.8"/>
+            <ellipse cx="9" cy="6" rx="6" ry="6" transform="rotate(-180 9 6)" fill="#8E8E8E" fill-opacity="0.8"/>
+            </svg>        
+          <span>Explore the Model results</span>
+        </h2>
+        <form>
+          <label for="scenarios">Select Scenario</label>
+          <select class="form-select" id="scenario" name="scenario_id">
+            {% for scenario in scenarios %}
+              <option value="{{ scenario.id }}" label="{{ scenario.name }}">{{ scenario }}</option>
+            {% endfor %}
+          </select>
+          <button class="btn btn-primary" type="submit" name="diagrams">Explore Diagrams</button>
+        </form>
+        <div class="mt-3"></div>
+        <a href="https://sedos-project.github.io/.github/results/"
+          class="btn btn-secondary"
+          target="_blank">Exemplary Result Diagrams</a>
+        <div class="mt-3">
+          <label for="customTextBox">
+            Scenario description:
+            1. Base scenario ToKo - technology-open & cost-optimal
+            2. Scenario variation RIGa: Reduced import dependency for fossil gas
+            3. Scenario variation SienA/B: sector integration
+          </label>
+        </div>
+        <a href="https://sedos-project.github.io/.github/scenarios/"
+          class="btn btn-secondary"
+          target="_blank">See more details on the scenarios</a>
+      </div>
     </div>
-    <a href="https://sedos-project.github.io/.github/scenarios/"
-      class="btn btn-secondary"
-      target="_blank">See more details on the scenarios</a>
-  </div>
+  </main>
 {% endblock content %}
 {% block javascript %}
   {{ block.super }}
