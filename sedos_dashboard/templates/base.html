@@ -20,7 +20,9 @@
       {% compress css %}
         <link rel="stylesheet" type="text/x-scss" href="{% static "vendors/bootstrap/scss/bootstrap.scss" %}" />
         <link rel="stylesheet" type="text/css" href="{% static "vendors/fomantic-ui/semantic.min.css" %}" />
-        <link type="text/x-scss" href="{% static 'css/project.scss' %}" rel="stylesheet" />
+        <link type="text/x-scss"
+              href="{% static 'css/project.scss' %}"
+              rel="stylesheet" />
       {% endcompress %}
     {% endblock css %}
     <!-- Le javascript
@@ -40,7 +42,10 @@
     <div class="mb-1">
       <nav class="navbar navbar-expand-md navbar-light">
         <div class="container">
-          <img src="{% static 'images/Header_Projekt_Sedos.jpg' %}" alt="Sedos logo" width="127" height="51">
+          <img src="{% static 'images/Header_Projekt_Sedos.jpg' %}"
+               alt="Sedos logo"
+               width="127"
+               height="51" />
           <div class="container-fluid">
             <button class="navbar-toggler navbar-toggler-right"
                     type="button"
@@ -58,7 +63,7 @@
                 {% if request.user.is_authenticated %}
                   <li class="nav-item">
                     <a class="nav-link"
-                      href="{% url 'users:detail' request.user.username %}">{% translate "My Profile" %}</a>
+                       href="{% url 'users:detail' request.user.username %}">{% translate "My Profile" %}</a>
                   </li>
                   <li class="nav-item">
                     {# URL provided by django-allauth/account/urls.py #}
