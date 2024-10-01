@@ -1,0 +1,38 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  border-radius: $radius-btn;
+
+  &--primary {
+    color: $color-white;
+    background-color: $color-secondary-dark;
+
+    &:hover,
+    &:active {
+      color: $color-white;
+      background-color: $color-secondary-darker;
+    }
+  }
+
+  &--secondary {
+    color: #704b23;
+    background-color: transparent;
+    border: 2px solid $color-primary;
+
+    &:hover,
+    &:active {
+      border-color: $color-primary-dark;
+    }
+  }
+
+  &--link {
+    color: $color-link;
+    font-weight: $font-weight-bold;
+
+    &:hover,
+    &:active {
+      color: $color-link-dark;
+    }
+  }
+}

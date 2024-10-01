@@ -7,7 +7,7 @@ volumes:
 services:
   django: &django
     build:
-      context: sedos_dashboard
+      context: .
       dockerfile: compose/local/django/Dockerfile
     image: sedos_dashboard_local_django
     container_name: sedos_dashboard_local_django
@@ -25,7 +25,7 @@ services:
 
   postgres:
     build:
-      context: sedos_dashboard
+      context: .
       dockerfile: compose/production/postgres/Dockerfile
     image: sedos_dashboard_production_postgres
     container_name: sedos_dashboard_local_postgres
@@ -35,50 +35,6 @@ services:
     env_file:
       - .envs/.local/.postgres
 
-  docs:
-    image: sedos_dashboard_local_docs
-    container_name: sedos_dashboard_local_docs
-    build:
-      context: sedos_dashboard
-      dockerfile: compose/local/docs/Dockerfile
-    env_file:
-      - .envs/.local/.django
-    volumes:
-      - ./docs:/docs:z
-      - ./config:/app/config:z
-      - ./sedos_dashboard:/app/sedos_dashboard:z
-    ports:
-      - '9000:9000'
-    command: /start-docs
-
   redis:
     image: redis:6
     container_name: sedos_dashboard_local_redis
-
-  celeryworker:
-    <<: *django
-    image: sedos_dashboard_local_celeryworker
-    container_name: sedos_dashboard_local_celeryworker
-    depends_on:
-      - redis
-      - postgres
-    ports: []
-    command: /start-celeryworker
-
-  celerybeat:
-    <<: *django
-    image: sedos_dashboard_local_celerybeat
-    container_name: sedos_dashboard_local_celerybeat
-    depends_on:
-      - redis
-      - postgres
-    ports: []
-    command: /start-celerybeat
-
-  flower:
-    <<: *django
-    image: sedos_dashboard_local_flower
-    container_name: sedos_dashboard_local_flower
-    ports:
-      - '5555:5555'
-    command: /start-flower

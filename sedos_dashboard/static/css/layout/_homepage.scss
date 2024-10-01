@@ -1,0 +1,62 @@
+.hp {
+  padding: 4rem 0;
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+
+    @media only screen and (min-width: $breakpoint-lg) {
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    & > section {
+      border: 1px solid $color-border;
+      border-radius: $radius-lg;
+      flex: 1;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    &-title {
+      display: block;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+    }
+
+    &-text {
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width: $breakpoint-lg) {
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+
+  &__section {
+    border: 1px solid $color-secondary;
+    border-radius: $radius-lg;
+    flex: 1;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    background-color: $color-light;
+
+    &-title {
+      color: $color-secondary-dark;
+    }
+
+    &-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 2rem 0;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color-white;
+  border-bottom: 1px solid $color-border;
+  padding: 0 $spacing-xl;
+}
