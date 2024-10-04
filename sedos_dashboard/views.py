@@ -7,7 +7,10 @@ from django_comparison_dashboard.models import Result
 
 Model = namedtuple("Model", ("collection", "structure"))
 
-MODELS = {"Stahlindustrie": Model("steel_industry_test", "SEDOS-structure-steel_industry")}
+MODELS = {
+    "Stahlindustrie": Model("steel_industry_test", "SEDOS-structure-steel_industry"),
+    "Gesamtsystem": Model("steel_industry_test", "SEDOS-structure-all"),
+}
 
 FORWARD_URLS = {
     "network": "django_energysystem_viewer:networks",
