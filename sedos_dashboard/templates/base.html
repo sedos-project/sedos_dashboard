@@ -47,6 +47,26 @@
                width="127"
                height="51" />
           <a href="{% url 'index' %}">Home</a>
+          {% if not abbreviation_list is None %}
+            <div class="container">
+              <p>Abbreviation Help:</p>
+              <form hx-get="/energysystem/abbreviation_meaning"
+                    hx-target="#meaning"
+                    hx-swap="innerhtml"
+                    hx-trigger="input">
+                <label for="abbreviation"></label>
+                <input list="abbreviations"
+                       id="abbreviation"
+                       name="abbreviation"
+                       placeholder="Enter or select abbreviation..." />
+                <datalist id="abbreviations">
+                  {% for abb in abbreviation_list %}<option value="{{ abb }}"></option>{% endfor %}
+                </datalist>
+                <input type="hidden" name="structure" value="{{ structure_name }}" />
+              </form>
+              <div id="meaning"></div>
+            </div>
+          {% endif %}
           <div class="container-fluid">
             <button class="navbar-toggler navbar-toggler-right"
                     type="button"
