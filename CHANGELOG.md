@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project tries to adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+### Added
+- structure for reference ES
+- home button on navigation bar
+- abbreviations to nav bar
+
+### Changed
+- SEDOS steel structure
+- translate section names
+- updated django_comparison_dashboard to v2.3.0
+- updated django_energysystem_viewer to v0.8.1
+
 ## [0.13.0] - 2024-10-01
 ### Changed
 - startpage layout and design
