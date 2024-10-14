@@ -8,8 +8,10 @@ from django_comparison_dashboard.models import Result
 Model = namedtuple("Model", ("collection", "structure"))
 
 MODELS = {
-    "Steel Industry": Model("steel_industry_test", "SEDOS-structure-steel_industry"),
-    "Overall System": Model("steel_industry_test", "SEDOS-structure-all"),
+    "Overall System - Highest Level of Detail": Model("steel_industry_test", "SEDOS-structure-all_lod3"),
+    "Overall System - Medium Level of Detail": Model("steel_industry_test", "SEDOS-structure-all_lod2"),
+    "Overall System - Lowest Level of Detail": Model("steel_industry_test", "SEDOS-structure-all_lod1"),
+    "Case Study - Steel Industry": Model("steel_industry_test", "SEDOS-structure-steel_industry"),
 }
 
 FORWARD_URLS = {
