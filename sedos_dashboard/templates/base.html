@@ -42,11 +42,14 @@
     <div class="mb-1">
       <nav class="navbar navbar-expand-md navbar-light">
         <div class="container">
-          <img src="{% static 'images/Header_Projekt_Sedos.jpg' %}"
-               alt="Sedos logo"
-               width="127"
-               height="51" />
-          <a href="{% url 'index' %}">Home</a>
+          <a href="{% url 'index' %}">
+            <img src="{% static 'images/Header_Projekt_Sedos.jpg' %}"
+              alt="Sedos logo"
+              width="127"
+              height="51"
+              title="Home" 
+            />
+          </a>
           {% if not abbreviation_list is None %}
             <div class="container">
               <p>Abbreviation Help:</p>
