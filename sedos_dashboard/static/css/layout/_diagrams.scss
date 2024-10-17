@@ -1,0 +1,99 @@
+.diagrams {
+  padding-bottom: 2rem;
+
+  h1 {
+    font-size: $font-size-2xl;
+    margin-bottom: 2rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  &__filters {
+    flex: 1;
+    min-width: 24rem;
+    max-width: 32rem;
+
+    .card-body {
+      padding: 1.75rem;
+    }
+
+    .nav-item .nav-link:not(.active) {
+      color: $color-link;
+
+      &:hover,
+      &:active {
+        color: $color-link-dark;
+      }
+    }
+
+    #id_chart_type {
+      padding-bottom: 1rem;
+    }
+
+    select,
+    input:not(.button),
+    .dropdown.selection {
+      border: 1px solid $neutral-300;
+    }
+
+    #id_facet_col_wrap {
+      border: 1px solid $neutral-300;
+      padding: 0.75rem;
+      border-radius: 4px;
+    }
+  }
+
+  &__settings {
+    padding-bottom: 1rem;
+    
+    select {
+      padding-right: 1rem;
+    }
+  }
+
+  &__save {
+    padding-top: 2rem;
+
+    button {
+      min-width: fit-content;
+    }
+  }
+
+  &__graph {
+    flex: 1;
+    max-width: 40rem;
+
+    @media only screen and (min-width: 1200px) {
+      max-width: 54rem;
+    }
+
+    @media only screen and (min-width: 1450px) {
+      max-width: 70rem;
+    }
+
+    @media only screen and (min-width: 1650px) {
+      max-width: 80rem;
+    }
+
+    @media only screen and (min-width: 1900px) {
+      max-width: 100rem;
+    }
+
+    @media only screen and (min-width: 2050px) {
+      max-width: 110rem;
+    }
+
+    .nav-item .nav-link:not(.active) {
+      color: $color-link;
+
+      &:hover,
+      &:active {
+        color: $color-link-dark;
+      }
+    }
+  }
+}
