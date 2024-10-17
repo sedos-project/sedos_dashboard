@@ -1,0 +1,16 @@
+.selection {
+  max-width: 44rem;
+
+  h1 {
+    font-size: $font-size-2xl;
+  }
+
+  &__item {
+    padding-bottom: 1rem;
+    
+    button {
+      margin-top: 1rem;
+      margin-right: 0.5rem;
+    }
+  }
+}
