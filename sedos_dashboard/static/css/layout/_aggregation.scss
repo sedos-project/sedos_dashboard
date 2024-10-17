@@ -1,5 +1,6 @@
 .aggregation {
   margin-top: 2rem;
+  padding: 0;
 
   h1 {
     font-size: $font-size-2xl;
@@ -33,6 +34,7 @@
     position: relative;
     margin-top: 2rem;
     border: 1px solid $neutral-200;
+    border-radius: $radius;
 
     #legend {
       position: absolute;
@@ -41,7 +43,7 @@
       padding: 0.7rem;
       border: 1px solid $neutral-200;
       background-color: $color-white;
-      border-radius: $radius;
+      border-radius: calc(#{$radius} - 2px);
     }
   }
 }

@@ -1,4 +1,11 @@
 .dashboard {
+  margin-top: 2rem;
+  padding: 0;
+
+  h1 {
+    font-size: $font-size-2xl;
+  }
+
   &__controls {
     background-color: $color-white;
     border-radius: $radius;
@@ -12,6 +19,15 @@
 
     .control {
       width: 100%;
+
+      select,
+      input {
+        padding: 0.6rem;
+        border-radius: 4px;
+      }
+    }
+
+    .control:not(:last-of-type) {
       padding-bottom: 1rem;
     }
   }
