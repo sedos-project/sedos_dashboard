@@ -8,8 +8,17 @@
         <label for="customTextBox">
           <h2 class="hp__intro-title">Why SEDOS?</h2>
           <span class="hp__intro-text">
-            In the SEDOS project we developed an open-source model structure taking into account the relevant future
-            technologies for electricity, heat, X2X, transport and industry in a sector-coupled energy system in Germany.
+            The SEDOS project supported by the BMWK provides a comprehensive open-source model structure taking into account the relevant
+            future technologies for electricity, heat, X2X, transport, and industry in a sector-coupled energy system for
+            Germany until 2070.
+            <br />
+            All the data has been registered in a collection on the databus for better findability.
+            We enable barrier-free access to the data by uploading it to the
+            <a href="https://openenergyplatform.org/" target="_blank">OEP</a> where the data can be downloaded
+            as csv or with an API. The model structure and data interoperability are tested on three different
+            optimization frameworks: TIMES, FINE, and Oemof. For easier reproducibility, the data come together with
+            detailed metadata, which is annotated with ontological concepts from the
+            <a href="https://openenergyplatform.org/ontology/" target="_blank">OEP</a>.
           </span>
         </label>
       </section>
@@ -17,18 +26,22 @@
         <label for="customTextBox">
           <h2 class="hp__intro-title">Why this GUI?</h2>
           <span class="hp__intro-text">
-            To improve the transparency and reproducibility of the open source structure this GUI provides.
+            To improve the transparency and reproducibility of the open source structure this GUI provides
             a few basic functionalities to explore the derived modeling base:
           </span>
           <ul>
-            <li>Looking into the input data and the underlying model structure of our reference energy system.</li>
-            <li>Looking into possible model results when applying the model data with different scenarios.</li>
+            <li>Looking into the underlying model structure of our reference energy system with the network graph.</li>
+            <li>Exploring the underlying input data of our model with an integrated table view.</li>
+            <li>See the aggregations steps defined in our model structure and download the different levels of detail .</li>
+            <li>
+              Create charts based on possible model results as an outcome of different frameworks and scenarios using the same data.
+            </li>
           </ul>
         </label>
       </section>
       <section>
-        <h2 class="hp__intro-title">Looking for more info?</h2>
-        <span class="hp__intro-text">See more details on SEDOS in the docs:</span>
+        <h2 class="hp__intro-title">Looking for more information on SEDOS?</h2>
+        <span class="hp__intro-text">Explore the various offerings to find out more about the project:</span>
         <a href="https://sedos-project.github.io/.github/"
            class="mt-4 button button--link"
            target="_blank">
@@ -42,6 +55,21 @@
             <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
             <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
           </svg>
+          <span class="ps-2">See project documentation</span>
+        </a>
+        <a href="https://doi.org/10.1016/j.rset.2024.100094"
+           class="mt-4 button button--link"
+           target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               width="16"
+               height="16"
+               fill="currentColor"
+               class="bi bi-box-arrow-up-right"
+               viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
+            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
+          </svg>
+          <span class="ps-2">See publication on the model structure</span>
         </a>
       </section>
     </section>
