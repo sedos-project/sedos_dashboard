@@ -9,3 +9,6 @@ sentry-sdk==1.29.2  # https://github.com/getsentry/sentry-python
 # Django
 # ------------------------------------------------------------------------------
 django-anymail[mailgun]==10.1  # https://github.com/anymail/django-anymail
+
+git+https://github.com/OpenEnergyPlatform/django-comparison-dashboard.git@v2.4.0
+git+https://github.com/sedos-project/django_energysystem_viewer.git@v0.9.0
