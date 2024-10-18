@@ -11,7 +11,7 @@ MODELS = {
     "Overall System - Highest Level of Detail": Model("sedos-project", "SEDOS-structure-all"),
     "Overall System - Medium Level of Detail": Model("sedos-project", "SEDOS-structure-all-lod2"),
     "Overall System - Lowest Level of Detail": Model("sedos-project", "SEDOS-structure-all-lod1"),
-    "Case Study - Steel Industry": Model("sedos-project", "SEDOS-structure-steel-industry"),
+    "Case Study - Steel Industry": Model("steel_industry_test", "SEDOS-structure-steel-industry"),
     "Case Study - Transport with Sector Coupling": Model("sedos-project", "SEDOS-structure-transport-sector-coupled"),
 }
 
