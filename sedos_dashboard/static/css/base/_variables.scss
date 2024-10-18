@@ -1,8 +1,8 @@
 $color-primary: #CDA533;
 $color-primary-dark: #865b22;
 $color-secondary: #338DCC;
-$color-secondary-dark: #226DA7;
-$color-secondary-darker: #1b4a71;
+$color-secondary-dark: #067ab9;
+$color-secondary-darker: #075985;
 $color-text: #000000;
 $color-text-secondary: #676C73;
 $color-link: $color-secondary-dark;
@@ -10,6 +10,19 @@ $color-link-dark: #1b4a71;
 $color-white: #FFFFFF;
 $color-light: #F6F8FA;
 $color-border: #C6CDD4;
+
+// Neutral palette
+$neutral-050: #f7f8f8;
+$neutral-100: #eeeef0;
+$neutral-200: #d8d9df;
+$neutral-300: #b7bac2;
+$neutral-400: #8f92a1;
+$neutral-500: #717586;
+$neutral-600: #5a5d6c;
+$neutral-700: #4b4d59;
+$neutral-800: #40424c;
+$neutral-900: #383942;
+$neutral-950: #25262c;
 
 $font-size-xs: 0.8125rem;
 $font-size-sm: 0.875rem;
@@ -31,7 +44,7 @@ $line-height-sm: 1.25rem;
 $line-height-md: 1.5rem;
 
 $radius-none: 0;
-$radius: 0.25rem;
+$radius: 0.5rem;
 $radius-lg: 1rem;
 $radius-btn: 100px;
 

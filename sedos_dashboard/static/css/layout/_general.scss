@@ -1,6 +1,22 @@
 body {
   .container {
     background-color: $color-white;
+
+    @media only screen and (min-width: 1480px) {
+      max-width: 1400px;
+    }
+
+    @media only screen and (min-width: 1680px) {
+      max-width: 1600px;
+    }
+
+    @media only screen and (min-width: 1880px) {
+      max-width: 1800px;
+    }
+
+    @media only screen and (min-width: 2080px) {
+      max-width: 2000px;
+    }
   }
 }
 

@@ -1,0 +1,10 @@
+.alert {
+  .btn-link {
+    color: $color-link;
+
+    &:hover,
+    &:active {
+      color: $color-link-dark;
+    }
+  }
+}

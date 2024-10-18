@@ -43,6 +43,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   # psycopg2 dependencies
   libpq-dev \
   build-essential \
+  # uv deps
+  curl \
+  ca-certificates \
   # Translations dependencies
   gettext \
   git \
@@ -51,11 +54,20 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/*
 
+# Download the latest installer
+ADD https://astral.sh/uv/install.sh /uv-installer.sh
+
+# Run the installer then remove it
+RUN sh /uv-installer.sh && rm /uv-installer.sh
+
+# Ensure the installed binary is on the `PATH`
+ENV PATH="/root/.cargo/bin/:$PATH"
+
 # Copy your requirements.txt file to the container
 COPY ./requirements ${APP_HOME}/requirements
 
 # Install Python dependencies directly from requirements.txt
-RUN pip install --no-cache-dir -r ${APP_HOME}/requirements/${BUILD_ENVIRONMENT}.txt
+RUN uv pip install --system --no-cache-dir -r ${APP_HOME}/requirements/${BUILD_ENVIRONMENT}.txt
 
 COPY ./compose/production/django/entrypoint /entrypoint
 RUN sed -i 's/\r$//g' /entrypoint
@@ -81,5 +93,8 @@ RUN chmod +x /start-flower
 
 # copy application code to WORKDIR
 COPY . ${APP_HOME}
+
+RUN uv pip install --system --no-cache-dir -e ${APP_HOME}/django_comparison_dashboard
+RUN uv pip install --system --no-cache-dir -e ${APP_HOME}/django_energysystem_viewer
 
 ENTRYPOINT ["/entrypoint"]

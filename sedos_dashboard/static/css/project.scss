@@ -1,7 +1,14 @@
 /* These styles are generated from project.scss. */
 
 @import 'base/variables';
+@import 'components/alerts';
 @import 'components/buttons';
+@import 'components/controls';
 @import 'components/nav';
+@import 'layout/aggregation';
+@import 'layout/dashboard';
+@import 'layout/diagrams';
 @import 'layout/general';
 @import 'layout/homepage';
+@import 'layout/process';
+@import 'layout/selection';
