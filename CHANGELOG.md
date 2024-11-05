@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project tries to adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+### Fixed
+- shrinking sidebar at processes/artifacts if table is loaded
+- removed scrollbar for tables
+
 ## [0.15.1] - 2024-10-18
 ### Fixed
 - add comparison dashboard and energysystem viewer to production requirements
