@@ -6,6 +6,7 @@ and this project tries to adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 ### Fixed
+- links to SEDOS documentation on starting page
 - shrinking sidebar at processes/artifacts if table is loaded
 - removed scrollbar for tables
 
