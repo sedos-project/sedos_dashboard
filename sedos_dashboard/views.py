@@ -28,7 +28,20 @@ class StartpageView(TemplateView):
     template_name = "index.html"
 
     def get_context_data(self, **kwargs):
-        scenarios = Result.objects.all()
+        scenarios = Result.objects.exclude(
+            name__in=[
+                "io_groups",
+                "ind_demo_online_v0",
+                "ind_demo_online_v1",
+                "ind_demo_online_v1",
+                "t_all_tokio_v0",
+                "t_all_tokio_v1 (t_all_tokio_v1.csv)",
+                "t_all_tokio_v2 (t_all_tokio_v2.csv)",
+                "o_steel_tokio (sedos_results.csv)",
+                "t_all_tokio_v3 (t_all_tokio_v3.csv)",
+                "f_tra_tokio (test_results.csv)",
+            ]
+        )
         return {"scenarios": scenarios, "models": MODELS.keys()}
 
     def get(self, request, *args, **kwargs):
