@@ -44,13 +44,11 @@
         <div class="container">
           <a href="{% url 'index' %}">
             <img src="{% static 'images/Header_Projekt_Sedos.jpg' %}"
-              alt="Sedos logo"
-              width="127"
-              height="51"
-              title="Home" 
-            />
+                 alt="Sedos logo"
+                 width="127"
+                 height="51"
+                 title="Home" />
           </a>
-          
           <div class="container-fluid">
             <button class="navbar-toggler navbar-toggler-right"
                     type="button"
@@ -101,10 +99,14 @@
       {% if not abbreviation_list is None %}
         <div class="container pb-4 ps-0">
           <div class="d-flex flex-row align-items-center">
-            <svg width="16" height="16" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <path d="m50 85c-19.301 0-35-15.699-35-35s15.699-35 35-35 35 15.699 35 35-15.699 35-35 35zm0-64c-16.102 0-29.102 13-29.102 29s13 29.102 29.102 29.102 29.102-13 29.102-29.102c-0.10156-16-13.102-29-29.102-29z"/>
-              <path d="m49.102 59.699c-1.6016 0-3-1.3008-3-3 0-4.6016 3-8.6016 7.3008-9.8984 1.8984-0.60156 3.1992-2.3008 3.1016-4.3008 0-3.6016-3-6.6016-6.6016-6.6016-3.6016 0-6.6016 3-6.6016 6.6016 0 1.6016-1.3008 3-3 3-1.6016 0-3-1.3008-3-3 0.19922-6.8984 5.8008-12.5 12.699-12.5s12.5 5.6016 12.5 12.5c0 4.6016-3 8.6016-7.3008 9.8984-1.8984 0.60156-3.1992 2.3008-3.1016 4.3008 0.003906 1.6016-1.3984 3-2.9961 3z"/>
-              <path d="m52.699 65.898c0 4.8008-7.1992 4.8008-7.1992 0 0-4.7969 7.1992-4.7969 7.1992 0"/>
+            <svg width="16"
+                 height="16"
+                 version="1.1"
+                 viewBox="0 0 100 100"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="m50 85c-19.301 0-35-15.699-35-35s15.699-35 35-35 35 15.699 35 35-15.699 35-35 35zm0-64c-16.102 0-29.102 13-29.102 29s13 29.102 29.102 29.102 29.102-13 29.102-29.102c-0.10156-16-13.102-29-29.102-29z" />
+              <path d="m49.102 59.699c-1.6016 0-3-1.3008-3-3 0-4.6016 3-8.6016 7.3008-9.8984 1.8984-0.60156 3.1992-2.3008 3.1016-4.3008 0-3.6016-3-6.6016-6.6016-6.6016-3.6016 0-6.6016 3-6.6016 6.6016 0 1.6016-1.3008 3-3 3-1.6016 0-3-1.3008-3-3 0.19922-6.8984 5.8008-12.5 12.699-12.5s12.5 5.6016 12.5 12.5c0 4.6016-3 8.6016-7.3008 9.8984-1.8984 0.60156-3.1992 2.3008-3.1016 4.3008 0.003906 1.6016-1.3984 3-2.9961 3z" />
+              <path d="m52.699 65.898c0 4.8008-7.1992 4.8008-7.1992 0 0-4.7969 7.1992-4.7969 7.1992 0" />
             </svg>
             <p class="pe-2 ps-1 mb-0">Abbreviation Help:</p>
             <form hx-get="/energysystem/abbreviation_meaning"
@@ -113,10 +115,9 @@
                   hx-trigger="input">
               <label for="abbreviation"></label>
               <input list="abbreviations"
-                    id="abbreviation"
-                    style="padding: 0.25rem; width: 14rem;"
-                    name="abbreviation"
-                    placeholder="Enter or select abbreviation..." />
+                     id="abbreviation"
+                     name="abbreviation"
+                     placeholder="Enter or select abbreviation..." />
               <datalist id="abbreviations">
                 {% for abb in abbreviation_list %}<option value="{{ abb }}"></option>{% endfor %}
               </datalist>
