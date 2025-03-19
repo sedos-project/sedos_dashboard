@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
   <main class="hp">
-    <h1 style="margin-top: -50px;">Welcome to the SEDOS GUI</h1>
+    <h1>Welcome to the SEDOS GUI</h1>
     <section class="hp__intro">
       <section>
         <label for="customTextBox">
@@ -204,7 +206,9 @@
         </a>
       </section>
     </section>
-    <img src='../media/img/bmwk.svg' alt="funding information" style="width:200px; height:auto;">
+    <img src="{% static 'images/bmwk.svg' %}"
+         alt="funding information"
+         class="funding" />
   </main>
 {% endblock content %}
 {% block javascript %}
