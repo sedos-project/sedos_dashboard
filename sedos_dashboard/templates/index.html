@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
   <main class="hp">
     <h1>Welcome to the SEDOS GUI</h1>
@@ -204,6 +206,9 @@
         </a>
       </section>
     </section>
+    <img src="{% static 'images/bmwk.svg' %}"
+         alt="funding information"
+         class="funding" />
   </main>
 {% endblock content %}
 {% block javascript %}
